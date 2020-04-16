@@ -49,7 +49,7 @@ class print extends JFrame
 						//Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","username","password");//your username and password
 						Connection conn = Connect.ConnectDb();
 
-						String sql="create or replace view v1 as (select A.course_id,C.course_name,A.no_of_attended_classes,A.no_of_classes_absent,A.total_classes,A.attendance_percent,A.year,A.sem from attendance A,course C where A.course_id=C.course_id and A.USN='"+b0.getText()+"')";
+						String sql="create or replace view v1 as (select A.course_id,C.course_name,A.no_of_attended_classes,A.no_of_classes_absent,A.total_classes,A.year,A.sem from attendance A,course C where A.course_id=C.course_id and A.USN='"+b0.getText()+"')";
 					    PreparedStatement ps=conn.prepareStatement(sql);
 						ResultSet rs=ps.executeQuery();
 						//while(rs.next())
@@ -59,10 +59,10 @@ class print extends JFrame
 						String sql2="select * from v1";
 						PreparedStatement ps2=conn.prepareStatement(sql2);
 						ResultSet rs2=ps2.executeQuery();
-						while(rs2.next())
+						/*while(rs2.next())
 						{
 							System.out.println("attendance_percent");
-						}
+						}*/
 						
 						
 

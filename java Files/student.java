@@ -274,13 +274,13 @@ class student extends JFrame
 													
 														String sql="update attendance set no_of_attended_classes=no_of_attended_classes+1 where USN='"+usnarray.get(i)+"' and course_id='"+zz.course+"' and year='"+zz.year+"' and sem='"+zz.sem+"'";
 														PreparedStatement ps=conn.prepareStatement(sql);
-														ResultSet rs=ps.executeQuery();
+														int rs=ps.executeUpdate();
 													}	
 													else
 													{
 														String sql2="update attendance set no_of_classes_absent=no_of_classes_absent+1 where USN='"+usnarray.get(i)+"' and course_id='"+zz.course+"' and year='"+zz.year+"' and sem='"+zz.sem+"'";
 														PreparedStatement ps2=conn.prepareStatement(sql2);
-														ResultSet rs2=ps2.executeQuery();
+														int rs2=ps2.executeUpdate();
 													}
 
 													

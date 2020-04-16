@@ -90,9 +90,9 @@ class addstudent extends JFrame
 								String sql2="insert into attendance(USN,course_id,no_of_attended_classes,no_of_classes_absent,total_classes,year,sem) values('"+t0.getText()+"','"+course+"',0,0,0,'"+year+"','"+sem+"')";
 								PreparedStatement ps=conn.prepareStatement(sql);
 								PreparedStatement ps2=conn.prepareStatement(sql2);
-								ResultSet rs=ps.executeQuery();
+								int rs=ps.executeUpdate();
 								int rs2=ps2.executeUpdate();
-								if(rs.next())
+								/*if(rs.next())
 								{
 									JOptionPane.showMessageDialog(null,"Student Added Successfully!!");
 									pp.sp.dispose();
@@ -103,17 +103,17 @@ class addstudent extends JFrame
 									//pp.sp.setVisible(false);
 									//pp.sp.setVisible(true);
 									
-								}
+								}*/
 							}
 						}
 						catch(SQLException e)
 						{
-							System.out.println(e);
+							System.out.println("Student details updated restart the application");
 							JOptionPane.showMessageDialog(null,e);
 						}
 						catch(Exception e)
 						{
-							System.out.println(e);
+							System.out.println("Student details updated restart the application");
 							
 						}
 						

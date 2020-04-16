@@ -39,7 +39,7 @@ class status extends JFrame
 		add(l3);
 		Font f3=new Font("Georgia",Font.BOLD,22);
 		l4=new JLabel("Enter Student Details to fetch status");
-			l4.setForeground(Color.WHITE);
+			l4.setForeground(Color.BLACK);
 			l4.setFont(f3);
 			l4.setBounds(60,0,750,90);
 			add(l4);

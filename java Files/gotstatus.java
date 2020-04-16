@@ -21,7 +21,7 @@ class gotstatus extends JFrame
 		JLabel l4,l0,l1,l2,l3,l5;
 		Font f3=new Font("Georgia",Font.BOLD,22);
 		l4=new JLabel("Student Attendance Status");
-			l4.setForeground(Color.WHITE);
+			l4.setForeground(Color.BLACK);
 			l4.setFont(f3);
 			l4.setBounds(60,0,750,90);
 			add(l4);
@@ -57,7 +57,7 @@ class gotstatus extends JFrame
 				//Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","sumukha","sumukha");
 				Connection conn = Connect.ConnectDb();
 
-				String sql="select USN,no_of_attended_classes,no_of_classes_absent,total_classes,attendance_percent from attendance where USN='"+usn+"'and year='"+year+"'and sem='"+sem+"' and course_id='"+course+"'";
+				String sql="select USN,no_of_attended_classes,no_of_classes_absent,total_classes from attendance where USN='"+usn+"'and year='"+year+"'and sem='"+sem+"' and course_id='"+course+"'";
 				PreparedStatement ps=conn.prepareStatement(sql);
 				ResultSet rs=ps.executeQuery();
 				
@@ -67,13 +67,13 @@ class gotstatus extends JFrame
 					 String attended=rs.getString("no_of_attended_classes");
 					 String absent=rs.getString("no_of_classes_absent");
 					 String total_classes=rs.getString("total_classes");
-					 String percent=rs.getString("attendance_percent");
+					// String percent=rs.getString("attendance_percent");
 					 
 					 l0=new JLabel("USN : "+USN);
 					l1=new JLabel("No. of Classes Attended : "+attended);
 					l2=new JLabel("No. Of Classes Not Attended : "+absent);
 					l3=new JLabel("Total No. of Classes : "+total_classes);
-					l5=new JLabel("Percentage of Attended classes : "+percent+"%");
+					//l5=new JLabel("Percentage of Attended classes : "+percent+"%");
 			
 					Font f0=new Font("skia",Font.BOLD,23);
 			
@@ -81,19 +81,19 @@ class gotstatus extends JFrame
 					l1.setBounds(100,185,500,30);
 					l2.setBounds(100,235,500,30);
 					l3.setBounds(100,285,500,30);
-					l5.setBounds(100,335,500,30);
+					//l5.setBounds(100,335,500,30);
 			
 					l0.setFont(f0);
 					l1.setFont(f0);
 					l2.setFont(f0);
 					l3.setFont(f0);
-					l5.setFont(f0);
+					//l5.setFont(f0);
 			
 						add(l0);
 						add(l1);
 						add(l2);
 						add(l3);
-						add(l5);
+						//add(l5);
 				}
 				
 							

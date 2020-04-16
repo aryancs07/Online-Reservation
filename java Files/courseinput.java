@@ -94,15 +94,15 @@ class courseinput extends JFrame
 								//Connection conn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","uname","password");//your username and password
 								Connection conn = Connect.ConnectDb();
 
-								String sql="insert into course values('"+t0.getText()+"','"+t1.getText()+"','"+sem+"','"+user+"','"+t2.getText()+"','"+sec+"')";
+								String sql="insert into course values('"+t0.getText()+"','"+t1.getText()+"','"+sem+"','"+user+"','"+t2.getText()+"')";
 								PreparedStatement ps=conn.prepareStatement(sql);
-								ResultSet rs=ps.executeQuery();
-								if(rs.next())
+								int rs=ps.executeUpdate();
+								/*if(rs.next())
 								{
 									JOptionPane.showMessageDialog(null,"Course Added Successfully!!");
 									dispose();
 									ss.c1.setVisible(true);
-								}
+								}*/
 							}
 						}
 						catch(SQLException e)
