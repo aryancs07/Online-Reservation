@@ -1,4 +1,3 @@
-//code created by sumukha
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -17,7 +16,7 @@ class Login extends JFrame
 		JButton b1;
 		Login()
 		{
-			setContentPane(new JLabel(new ImageIcon("login.jpg")));
+			setContentPane(new JLabel(new ImageIcon("/Image1/nmit.jpg")));
 			Font f1=new Font("Arial",Font.BOLD,24);
 			Font f2=new Font("Georgia",Font.BOLD,30);
 			Font f3=new Font("Arial",Font.BOLD,20);
@@ -36,7 +35,7 @@ class Login extends JFrame
 			l0.setFont(f2);
 			l0.setForeground(Color.BLACK);
 			l0.setBounds(100,10,800,50);
-			l1.setBounds(300,100,200,40);
+			l1.setBounds(300,100,400,50);
 			l2.setBounds(280,200,100,20);
 			t1.setBounds(280,230,200,30);
 			l3.setBounds(280,280,100,20);
@@ -59,8 +58,6 @@ class Login extends JFrame
 			b1.addActionListener(new ActionListener(){
 				public void actionPerformed(ActionEvent ae){
 					try{
-						//Class.forName("com.mysql.jdbc.Driver");
-						//Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/Attendance_Mgmt_System?user=root&password=password&useUnicode=true&characterEncoding=UTF-8","root","password"); //insert your database username and password
 						Connection conn = Connect.ConnectDb();
 
 						String sql="select * from admin where username='"+t1.getText()+"' and password='"+t2.getText()+"'";
@@ -92,4 +89,3 @@ class Login extends JFrame
 		Login login=new Login();
 	}
 }
-//code created by sumukha

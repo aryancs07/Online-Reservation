@@ -29,8 +29,8 @@ class student extends JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		zz.pan=new JPanel();
-		zz.pan.setMinimumSize(new Dimension(1880, 5000));
-		zz.pan.setPreferredSize(new Dimension(1880,5000 ));
+		zz.pan.setMinimumSize(new Dimension(1880,2000));
+		zz.pan.setPreferredSize(new Dimension(1880,2000));
 		zz.pan.setLayout(null);
 		zz.pan.setVisible(true);
 		
